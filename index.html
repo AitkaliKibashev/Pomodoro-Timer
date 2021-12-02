@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Timer</title>
+  </head>
+  <body>
+    <main class="main">
+      <div class="timer-container">
+        <div class="timer-line-background"></div>
+        <div class="timer-slot">
+          <div class="timer-lt"></div>
+        </div>
+        <div class="timer-slot">
+          <div class="timer-rt"></div>
+        </div>
+
+        <div class="timer-background">
+          <div class="timer-countdown">1:00</div>
+          <button class="start-btn">start</button>
+          <div class="options-btn">
+            <img src="images/gear.svg" alt="options" />
+            <img class="done-img" src="images/check.svg" alt="options" />
+          </div>
+          <input class="timer-setter" type="number" value="2:00" />
+        </div>
+      </div>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>

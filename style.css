@@ -1,0 +1,217 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("fonts/bebasneue-book-webfont.woff") format("woff");
+  src: url("fonts/bebasneue-book-webfont.woff2") format("woff2");
+}
+
+@keyframes timer-slide-lt {
+  100% {
+    transform: rotate(135deg);
+  }
+  50% {
+    transform: rotate(135deg);
+  }
+  0% {
+    transform: rotate(315deg);
+  }
+}
+@keyframes timer-slide-rt {
+  100% {
+    transform: rotate(-45deg);
+  }
+  50% {
+    transform: rotate(135deg);
+  }
+  0% {
+    transform: rotate(135deg);
+  }
+}
+
+.main {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  font-family: sans-serif;
+  justify-content: center;
+  align-items: center;
+
+  background: #2b2a30;
+}
+
+.timer-container {
+  display: flex;
+  position: relative;
+  width: 520px;
+  height: 520px;
+}
+
+.timer-line-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  border-radius: 50%;
+  background: #000000;
+  box-shadow: -5px 14px 44px #000000, 5px -16px 50px rgba(255, 255, 255, 0.15);
+}
+
+.timer-slot {
+  width: 50%;
+  height: 520px;
+  position: relative;
+
+  overflow: hidden;
+}
+
+.timer-lt,
+.timer-rt {
+  position: relative;
+  top: 50%;
+  left: 0;
+  z-index: 15;
+  margin-top: -260px;
+  margin-left: -260px;
+
+  width: 520px;
+  height: 520px;
+
+  transform: rotate(135deg);
+  border-radius: 50%;
+  border: 10px solid #910a0a;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+}
+
+.timer-lt {
+  transform: rotate(-45deg);
+  left: 100%;
+}
+
+.timer-container.pause .timer-lt,
+.timer-container.pause .timer-rt {
+  border: 10px solid #09a65a;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  transition: all 0.5s;
+}
+
+.timer-background {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  left: 10px;
+  bottom: 0;
+  z-index: 100;
+
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  width: 500px;
+  height: 500px;
+
+  background: radial-gradient(
+    71.4% 71.4% at 51.7% 28.6%,
+    #3a393f 0%,
+    #17171a 100%
+  );
+  box-shadow: inset 0px 0px 114px rgba(0, 0, 0, 0.45);
+  border-radius: 50%;
+}
+
+.close-eclipse {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 518px;
+  height: 518px;
+
+  box-shadow: -5px 14px 44px #000000, 5px -16px 50px rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  border: 10px solid #910a0a;
+  border-left-color: transparent;
+  border-top-color: transparent;
+}
+
+.timer-countdown {
+  font-family: Bebas Neue;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 196px;
+  line-height: 196px;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: white;
+}
+
+.start-btn {
+  margin-top: 30px;
+  margin-left: 5px;
+
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.6em;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.options-btn {
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.timer-setter {
+  opacity: 0;
+  margin-top: 10px;
+  padding: 5px;
+  width: 100px;
+
+  font-family: inherit;
+  font-size: 18px;
+
+  border: 2px solid #09a65a;
+  background: transparent;
+  color: white;
+  border-radius: 15px;
+
+  transition: all 0.2s ease-in;
+  animation-play-state: unset;
+}
+
+.timer-setter.show {
+  opacity: 1;
+}
+
+.done-img {
+  display: none;
+}
+
+.options-btn.done .done-img {
+  display: block;
+}
+
+.options-btn.done img {
+  display: none;
+}
